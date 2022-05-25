@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="bg">	
+	<div class="container bg-white w">		
+		<div class="d-flex align-items-center"><!-- justify-content-end -->
+			<h1>{{title}}</h1>
+			<div class="d-flex 	 {{hidden}}">
+				<a href="{{title}}/edit" class="edit"><img src="/static/img/редактировать.svg" alt="упсс.."></a>
+
+				<!-- Button trigger modal -->
+				<a href="#" class="edit del" data-toggle="modal" data-target="#exampleModal"><img src="/static/img/delete.svg" alt="упсс.."></a>
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Вы действительно хотите удалить публикацию?</h5>
+								<button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Выход</button>
+								<a href="{{title}}/delete" type="button" class="btn btn-primary">Удалить</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p>{{text | safe}}</p>
+		<!-- <img src="/static/images/668145.jpg" alt="упсс.."> -->
+	</div>
+</div>	
+{% endblock %}

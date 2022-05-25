@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<form action="{{url_for(upload | default('upload'))}}" method="post" enctype="multipart/form-data">
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<input type="text" class="title form-control" placeholder="Заголовок" name="title" value='{{title}}'>
+		</div>
+		<div class="col title"><input type="file" name="preview" class="form-control"></div>
+	</div>	
+	{% for msg in get_flashed_messages() %}
+		<div class="flash">{{msg}}</div>
+	{% endfor %}
+	<textarea class="form-control text" cols="30" rows="10" placeholder="Tекст" name="text">{{text}}</textarea>		
+	<div class="form">
+		<input class="upload" type="file" name='files' multiple>						
+		<div class="button">
+			<button class="btn btn-secondary text-center" type="reset">очистить</button>
+			<button class="btn btn-success text-center" type="submit">добавить</button>
+		</div>
+	</div>		
+</div>
+</form>	
+<br>
+
+{% endblock %}

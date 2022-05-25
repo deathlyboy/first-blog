@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+<body class="b">
+<div class="text-center w">
+	<div class="width">
+		
+		<form action="admin" method="post" enctype="multipart/form-data">
+			<img class="mb-4" src="{{ url_for('static', filename='..//static/img/logo.svg') }}" alt="logo" width="72" height="57">
+			<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+	
+			<div class="form-floating">
+				<input class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+				<label for="floatingInput">login</label>
+			</div>
+			<div class="form-floating bord">
+				<input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+				<label for="floatingPassword">Password</label>
+				{% for i in get_flashed_messages()%}
+					<div class="flash">{{i}}</div>
+				{% endfor %}
+			</div>
+	
+			<div class="checkbox mb-3">
+				<label class="lab">
+					<input type="checkbox" value="remember-me" name="check"> Remember me
+				</label>
+			</div>
+			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+		</form>
+	</div>
+</div>
+</body>
+{% endblock %}
