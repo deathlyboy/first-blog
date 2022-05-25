@@ -1,2 +1,2 @@
 class Configuration:
-    SECRET_KEY = '3!Fl8190Gg$gf/fli%!p#*jdsfdkGHJ^'
+    SECRET_KEY = 'Hmh!&H(77J77jyy&kjJJK66^&(8jjIIHG9'
