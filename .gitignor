@@ -1,0 +1,6 @@
+/.idea
+/__pycache__
+/Procfile
+/README
+/requirements.txt
+/config.py

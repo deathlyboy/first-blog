@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from sqlighter import SQlighter
+from config import Configuration
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '049ae2f115a91e8a8cf1a553157b13d99a0078e6'
+app.config.from_object(Configuration)
 db = SQlighter('пользователи.db')
 
 
